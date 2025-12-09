@@ -7,7 +7,7 @@
 
 - 🔭 I’m currently working on [Coaclix-AI-Fitness-App](https://coachlix-ai-fitness-coaching.vercel.app/)
 
-- 🌱 I’m currently learning **MERN stack,Next.js,ML**
+- 🌱 I’m currently learning **MERN stack,Next.js,GEN AI**
 
 - 👨‍💻 All of my projects are available at [https://uditportfolio-six.vercel.app/](https://uditportfolio-six.vercel.app/)
 
