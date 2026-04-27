@@ -20,7 +20,7 @@
 
 ## 🚀 About Me
 
-- 🔭 Currently building **[Coachlix — AI Fitness Coaching App](https://coachlix-ai-fitness-coaching.vercel.app/)**
+- 🔭 Currently building **[Coachlix — AI Fitness Coaching App](https://coachlix-ai.vercel.app/)**
 - 🌱 Deepening skills in **MERN Stack · Next.js · Generative AI**
 - 🎯 Goal: Writing clean, modular, production-grade code
 - 💼 All projects → [uditportfolio-six.vercel.app](https://uditportfolio-six.vercel.app/)
