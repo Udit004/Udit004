@@ -182,9 +182,9 @@ Full-stack inventory & billing system built for small businesses, with JWT-based
 
 ## ⚡ Recent Activity
 
-<!--START_SECTION:activity-->
+<!--RECENT_ACTIVITY:start-->
 - Your recent commits, PRs, and issues will appear here automatically ⚡
-<!--END_SECTION:activity-->
+<!--RECENT_ACTIVITY:last_update-->
 
 <sub>Refreshed every 6 hours by <code>.github/workflows/update-readme-activity.yml</code>.</sub>
 
