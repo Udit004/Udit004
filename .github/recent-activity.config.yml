@@ -1,0 +1,24 @@
+# Configuration for the Readme-Workflows/recent-activity action.
+# Docs: https://github.com/Readme-Workflows/recent-activity/wiki/Configuration
+#
+# Why this file exists: the action's default push-event message is
+# "⬆️ Pushed {AMOUNT} commit(s) to {REPO}", but GitHub's public events API
+# doesn't always return a commit count anymore, so {AMOUNT} renders as
+# "undefined". We override just that one message to avoid it, and keep
+# everything else on sane defaults.
+
+settings:
+  readme_file: "./README.md"
+  max_lines: 5
+
+  messages:
+    push: "⬆️ Pushed to [{REPO}](https://github.com/{REPO})"
+    issue_opened: "❗ Opened an issue in [{REPO}](https://github.com/{REPO})"
+    issue_closed: "✅ Closed an issue in [{REPO}](https://github.com/{REPO})"
+    pr_opened: "🔧 Opened a PR in [{REPO}](https://github.com/{REPO})"
+    pr_closed: "❌ Closed a PR in [{REPO}](https://github.com/{REPO})"
+    pr_merged: "🎉 Merged a PR in [{REPO}](https://github.com/{REPO})"
+    create_repo: "📦 Created a new repository [{REPO}](https://github.com/{REPO})"
+    fork_repo: "🍴 Forked [{REPO}](https://github.com/{REPO})"
+    new_release: "🚀 Published a release in [{REPO}](https://github.com/{REPO})"
+    new_star: "⭐ Starred [{REPO}](https://github.com/{REPO})"
