@@ -1,0 +1,37 @@
+# Rewrites everything between the <!--START_SECTION:activity--> and
+# <!--END_SECTION:activity--> markers in README.md with your most recent
+# public GitHub events (commits, PRs, issues, releases, etc).
+#
+# Uses the actively maintained fork of the original github-activity-readme
+# action, since the original (jamesgeorge007/github-activity-readme) is
+# no longer maintained.
+# Docs: https://github.com/Readme-Workflows/recent-activity
+
+name: Update Recent Activity
+
+on:
+  schedule:
+    # Runs every 6 hours. Tune this if you want it fresher or less frequent.
+    - cron: "0 */6 * * *"
+  workflow_dispatch: {} # lets you trigger it manually from the Actions tab
+
+# Needed so the action can commit the updated README back to the repo.
+# Confirm this under:
+# Repo Settings → Actions → General → Workflow permissions → "Read and write permissions"
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    name: Update README with recent GitHub activity
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Update activity section
+        uses: Readme-Workflows/recent-activity@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          MAX_LINES: 5 # how many recent events to show
