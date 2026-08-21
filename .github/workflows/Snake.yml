@@ -1,0 +1,53 @@
+# Generates an animated "snake" that eats your GitHub contribution squares,
+# and pushes the SVG output to a branch called `output`.
+# The README embeds that SVG directly from the `output` branch, so the
+# animation refreshes on its own — no manual editing needed.
+#
+# Docs: https://github.com/Platane/snk
+
+name: Generate Contribution Snake
+
+on:
+  schedule:
+    # Runs once a day at 00:00 UTC. Cron uses UTC time regardless of your timezone.
+    - cron: "0 0 * * *"
+  workflow_dispatch: {} # lets you trigger it manually from the Actions tab
+  push:
+    branches:
+      - main # also regenerate whenever you push to main
+
+# The default GITHUB_TOKEN needs write access to push the generated
+# SVG to the `output` branch. Also confirm this under:
+# Repo Settings → Actions → General → Workflow permissions → "Read and write permissions"
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Reads your public contribution calendar and renders it as a
+      # snake-game animation, in both light and dark palettes.
+      - name: Generate snake SVGs
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Commits the generated SVGs to a dedicated `output` branch,
+      # keeping the generated assets separate from your source (main) branch.
+      - name: Publish SVGs to the output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
