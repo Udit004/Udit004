@@ -25,7 +25,7 @@
 - 🏗️ Also building **Vyapar Sathi** — a full-stack inventory management system
 - 🌱 Deepening my skills in system design, LLM application architecture, and production-grade backend engineering
 - 🎯 Focused on writing **clean, modular, scalable code** — the way professional teams actually ship it
-- 💼 All projects → [uditportfolio-six.vercel.app](https://uditkrtiwari.vercel.app/)
+- 💼 All projects → [uditkrtiwari.vercel.app/](https://uditkrtiwari.vercel.app/)
 - 📄 Resume → [View Here](https://drive.google.com/drive/u/0/folders/1l_cURNOwMhOekxpPuDBOkYxcqSXc4ZdX)
 - 📬 Reach me at **rajankumart266@gmail.com**
 
